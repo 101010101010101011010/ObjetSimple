@@ -1,0 +1,14 @@
+@startuml port
+
+class Port {
+  PortType type
+  PortDirectionality directionality
+  Port connectedTo
+
+  Port Port(PortType, PortDirectionality)
+  boolean Connect(Port)
+  void Disconnect(Boolean)
+  String ToString()
+}
+
+@enduml
