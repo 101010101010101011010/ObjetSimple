@@ -4,31 +4,31 @@ public class Main {
     static Port port3 = new Port(PortType.DVI, PortDirectionality.Out);
 
     public static void main(String[] args) {
-        if (port1.Connect(port2)) {
+        if (port1.connect(port2)) {
             System.out.println("A pu connecter!");
         } else {
             System.err.println("N'a pas pu connecter....");
         }
-        PrintAll();
+        printAll();
 
-        if (port3.Connect(port2)) {
+        if (port3.connect(port2)) {
             System.out.println("A pu connecter!");
         } else {
             System.err.println("N'a pas pu connecter....");
         }
-        PrintAll();
+        printAll();
 
-        if (port3.Connect(port1)) {
+        if (port3.connect(port1)) {
             System.out.println("A pu connecter!");
         } else {
             System.err.println("N'a pas pu connecter....");
         }
-        PrintAll();
+        printAll();
     }
 
-    public static void PrintAll() {
-        System.out.println("Port1:\n" + port1.ToString());
-        System.out.println("Port2:\n" + port2.ToString());
-        System.out.println("Port3:\n" + port3.ToString());
+    public static void printAll() {
+        System.out.println("Port1:\n" + port1.info());
+        System.out.println("Port2:\n" + port2.info());
+        System.out.println("Port3:\n" + port3.info());
     }
 }

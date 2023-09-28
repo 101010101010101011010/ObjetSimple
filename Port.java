@@ -8,12 +8,12 @@ public class Port {
         this.directionality = _directionality;
     }
 
-    public boolean Connect(Port targetPort) {
+    public boolean connect(Port targetPort) {
         if (!targetPort.type.equals(this.type)) { return false; }
         if (targetPort.directionality.equals(this.directionality)) { return false; }
 
-        targetPort.Disconnect(true);
-        this.Disconnect(true);
+        targetPort.disconnect(true);
+        this.disconnect(true);
 
         this.connectedTo = targetPort;
         targetPort.connectedTo = this;
@@ -26,15 +26,15 @@ public class Port {
      * 
      * @param isRootCall  Indique si la methode a deja appelee la methode respective du port connecte
      */
-    public void Disconnect(Boolean isRootCall) {
+    public void disconnect(Boolean isRootCall) {
         if (isRootCall && this.connectedTo != null) {
-            this.connectedTo.Disconnect(false);
+            this.connectedTo.disconnect(false);
         }
 
         this.connectedTo = null;
     }
     
-    public String ToString() {
+    public String info() {
         return "This: " + String.valueOf(this) + "; Type: " + String.valueOf(this.type) + "; Directionality: " + String.valueOf(this.directionality) + "; Connected To: " + String.valueOf(this.connectedTo);
     }
 }
