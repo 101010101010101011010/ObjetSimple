@@ -5,10 +5,10 @@ class Port {
   PortDirectionality directionality
   Port connectedTo
 
-  Port Port(PortType, PortDirectionality)
-  boolean Connect(Port)
-  void Disconnect(Boolean)
-  String ToString()
+  Port port(PortType, PortDirectionality)
+  boolean connect(Port)
+  void disconnect(Boolean)
+  String info()
 }
 
 @enduml
