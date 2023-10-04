@@ -27,8 +27,8 @@ public class Main {
     }
 
     public static void printAll() {
-        System.out.println("Port1:\n" + port1.info());
-        System.out.println("Port2:\n" + port2.info());
-        System.out.println("Port3:\n" + port3.info());
+        System.out.println("Port1:\n" + port1.toString());
+        System.out.println("Port2:\n" + port2.toString());
+        System.out.println("Port3:\n" + port3.toString());
     }
 }

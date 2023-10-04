@@ -24,7 +24,7 @@ public class Port {
     /**
      * Deconnecte le port.
      * 
-     * @param isRootCall  Indique si la methode a deja appelee la methode respective du port connecte
+     * @param isRootCall  Indique si la methode a déjà appelée la méthode respective du port connecté
      */
     public void disconnect(Boolean isRootCall) {
         if (isRootCall && this.connectedTo != null) {
@@ -34,7 +34,18 @@ public class Port {
         this.connectedTo = null;
     }
     
-    public String info() {
-        return "This: " + String.valueOf(this) + "; Type: " + String.valueOf(this.type) + "; Directionality: " + String.valueOf(this.directionality) + "; Connected To: " + String.valueOf(this.connectedTo);
+    @Override
+    public String toString() {
+        return "This: " + String.valueOf(this.hashCode()) + "; Type: " + String.valueOf(this.type) + "; Directionality: " + String.valueOf(this.directionality) + "; Connected To: " + String.valueOf(this.connectedTo != null ? this.connectedTo.hashCode() : null);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) { return true; }
+        if (!(obj instanceof Port)) { return false; }
+
+        if (this.toString().equals(obj.toString())) { return true;}
+
+        return false;
     }
 }
