@@ -4,7 +4,7 @@
 class Port {
   - PortType type
   - PortDirectionality directionality
-  - Port connectedTo = null
+  - Port connectedTo
 
   + Port(PortType, PortDirectionality)
   + boolean connect(Port targetPort)

@@ -8,6 +8,18 @@ public class Port {
         this.directionality = _directionality;
     }
 
+    public PortType getType() {
+        return this.type;
+    }
+
+    public PortDirectionality getDirectionality() {
+        return this.directionality;
+    }
+
+    public Port getConnectedTo() {
+        return this.connectedTo;
+    }
+
     public boolean connect(Port targetPort) {
         if (!targetPort.type.equals(this.type)) { return false; }
         if (targetPort.directionality.equals(this.directionality)) { return false; }
