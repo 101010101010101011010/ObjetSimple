@@ -1,14 +1,16 @@
-@startuml port
+@startuml Port
+!theme amiga
 
 class Port {
-  PortType type
-  PortDirectionality directionality
-  Port connectedTo
+  - PortType type
+  - PortDirectionality directionality
+  - Port connectedTo = null
 
-  Port port(PortType, PortDirectionality)
-  boolean connect(Port)
-  void disconnect(Boolean)
-  String info()
+  + Port(PortType, PortDirectionality)
+  + boolean connect(Port targetPort)
+  + void disconnect(Boolean isRootCall)
+  + String toString()
+  + boolean equals(Object obj)
 }
 
 @enduml
